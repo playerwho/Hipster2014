@@ -5,7 +5,7 @@ import ctec.hipster.view.HipsterFrame;
 /**
  *  HipsterAppController for the 2014 Hipster day project
  * @author CodyH
- * @version 1.0 11/12/14 Basic framework only
+ * @version 1.5 11/12/14
  */
 public class HipsterAppController
 {
@@ -13,6 +13,9 @@ public class HipsterAppController
 	private Hipster selfHipster;
 	private String [] myAlbums;
 	
+	/**
+	 * builds the array, and frame
+	 */
 	public HipsterAppController()
 	{
 		selfHipster = new Hipster("John", 69);
@@ -22,16 +25,29 @@ public class HipsterAppController
 	
 	public void start()
 	{
-		selfHipster.setHipsterAlbums(myAlbums);
+		
 	}
 	
+	/**
+	 * get the selfHipster values
+	 * @return selfhiptser
+	 */
+	public Hipster getSelfHipster()
+	{
+		return selfHipster;
+	}
+	
+	/**
+	 * different ways of making an array list, all work.
+	 */
 	private void buildAlbumArray()
 	{
 		myAlbums = new String[4];
 		myAlbums[0] = "Hello Nasty";
 		myAlbums[1] = "Modest Mouse";
-		myAlbums[2] = "fhfhdhd";
-		myAlbums[3] = "fsdapo wowbfw";
+		myAlbums[2] = "something";
+		myAlbums[3] = "Big Willie Style";
+		selfHipster.setHipsterAlbums(myAlbums);
 		
 		// hipster
 		String [] otherAlbums = {"stuff", "other", "sop sign", "hipster array"};

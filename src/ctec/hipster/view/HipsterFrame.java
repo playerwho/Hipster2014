@@ -8,6 +8,10 @@ public class HipsterFrame extends JFrame
 {
 	private HipsterPanel basePanel;
 	
+	/**
+	 * ties frame, appcontroller, and base controller together
+	 * @param baseController
+	 */
 	public HipsterFrame(HipsterAppController baseController)
 	{
 		this.basePanel = new HipsterPanel(baseController);
@@ -15,6 +19,9 @@ public class HipsterFrame extends JFrame
 		setupFrame();
 	}
 	
+	/**
+	 * sets up a frame for a window
+	 */
 	private void setupFrame()
 	{
 		this.setContentPane(basePanel);

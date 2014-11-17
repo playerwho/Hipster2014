@@ -11,6 +11,9 @@ public class Hipster
 	private int age;
 	private String [] hipsterAlbums;
 	
+	/**
+	 * defines what the hipster cant be
+	 */
 	public Hipster()
 	{
 		name = "";
@@ -18,6 +21,11 @@ public class Hipster
 		hipsterAlbums = null;
 	}
 	
+	/**
+	 * builds hipster
+	 * @param name is name
+	 * @param age is age
+	 */
 	public Hipster(String name, int age)
 	{
 		this.name = name;
@@ -25,6 +33,10 @@ public class Hipster
 		hipsterAlbums = null;
 	}
 
+	/**
+	 * sets many variables
+	 * @return the variables
+	 */
 	public String getName()
 	{
 		return name;

@@ -1,6 +1,8 @@
 package ctec.hipster.view;
 
 import java.awt.Color;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.*;
 
@@ -14,6 +16,10 @@ public class HipsterPanel extends JPanel
 	private JLabel hipsterImage;
 	private SpringLayout baseLayout;
 	
+	/**
+	 * builds the panel window
+	 * @param baseController, controls the project
+	 */
 	public HipsterPanel(HipsterAppController baseController)
 	{
 		this.baseController = baseController;
@@ -33,9 +39,12 @@ public class HipsterPanel extends JPanel
 	
 	private void setupComboBox()
 	{
-		
+		albumBox.setModel(new DefaultComboBoxModel(baseController.getSelfHipster().getHipsterAlbums()));
 	}
 	
+	/**
+	 * sets and builds specifics of the panel
+	 */
 	private void setupPanel()
 	{
 		this.setBackground(Color.CYAN);
@@ -46,6 +55,9 @@ public class HipsterPanel extends JPanel
 		this.add(hipsterImage);
 	}
 	
+	/**
+	 * sets up the layout of the panel
+	 */
 	private void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.WEST, hipsterImage, 237, SpringLayout.WEST, this);
@@ -56,9 +68,29 @@ public class HipsterPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, albumLabel, 340, SpringLayout.EAST, albumBox);
 	}
 	
+	/**
+	 * gives a listener for the drop down box on the panel to do things when certain fields are selected
+	 */
 	private void setupListeners()
 	{
-		
+		albumBox.addItemListener(new ItemListener()
+		{
+			@Override
+			public void itemStateChanged(ItemEvent selected)
+			{
+				if(albumBox.getSelectedIndex() == 0)
+				{
+					albumLabel.setText("you are truly hipster");
+				}
+				else if(albumBox.getSelectedIndex() <=2)
+				{
+					albumLabel.setText("you may be slightly hipster");
+				}
+				else
+				{
+					albumLabel.setText("ehh");
+				}
+			}
+		});
 	}
-
 }
