@@ -3,9 +3,7 @@ package ctec.hipster.view;
 import java.awt.Color;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-
 import javax.swing.*;
-
 import ctec.hipster.controller.HipsterAppController;
 
 public class HipsterPanel extends JPanel
@@ -28,9 +26,7 @@ public class HipsterPanel extends JPanel
 		hipsterImage = new JLabel("something cool lookin", new ImageIcon(HipsterPanel.class.getResource("/ctec/hipster/view/images/cam.jpg")), JLabel.CENTER);
 		hipsterImage.setVerticalAlignment(SwingConstants.BOTTOM);
 		albumBox = new JComboBox();
-		
-		
-		
+
 		setupComboBox();
 		setupPanel();
 		setupLayout();
@@ -80,11 +76,11 @@ public class HipsterPanel extends JPanel
 			{
 				if(albumBox.getSelectedIndex() == 0)
 				{
-					albumLabel.setText("you are truly hipster");
+					albumLabel.setText("We got a hipster up in here!");
 				}
 				else if(albumBox.getSelectedIndex() <=2)
 				{
-					albumLabel.setText("you may be slightly hipster");
+					albumLabel.setText("good choice");
 				}
 				else
 				{

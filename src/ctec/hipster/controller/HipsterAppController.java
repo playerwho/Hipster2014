@@ -2,6 +2,7 @@ package ctec.hipster.controller;
 
 import ctec.hipster.model.Hipster;
 import ctec.hipster.view.HipsterFrame;
+
 /**
  *  HipsterAppController for the 2014 Hipster day project
  * @author CodyH
@@ -23,10 +24,11 @@ public class HipsterAppController
 		baseFrame = new HipsterFrame(this);
 	}
 	
+	/**
+	 * starts the project
+	 */
 	public void start()
-	{
-		
-	}
+	{}
 	
 	/**
 	 * get the selfHipster values
@@ -38,7 +40,7 @@ public class HipsterAppController
 	}
 	
 	/**
-	 * different ways of making an array list, all work.
+	 * different ways of making an array, all work.
 	 */
 	private void buildAlbumArray()
 	{
